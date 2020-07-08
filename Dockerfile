@@ -10,3 +10,4 @@ RUN apt update -y \
 
 EXPOSE 8080 22
 ENTRYPOINT ["docker-entrypoint.sh"]
+CMD ["/bin/bash"]
