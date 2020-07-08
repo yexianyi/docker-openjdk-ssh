@@ -2,7 +2,7 @@ FROM openjdk:8-jre
 
 RUN   apt update -y \
 &&    apt install ssh -y \
-&&    apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; \
+&&    apt-get purge -y --auto-remove \
 &&    echo "root:root" | chpasswd
 
 COPY docker-entrypoint.sh /usr/local/bin/
