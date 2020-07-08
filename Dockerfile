@@ -5,8 +5,8 @@ COPY docker-entrypoint.sh /home/docker-entrypoint.sh
 WORKDIR /home
 
 RUN  apt update -y \
-&&  apt install ssh -y
+&&  apt install ssh -y \
 #&& service ssh start \
-#&&  /bin/echo dev:dev |chpasswd
+&& echo "root:root" | chpasswd
 
 EXPOSE 8080 22
