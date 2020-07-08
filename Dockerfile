@@ -1,13 +1,11 @@
 FROM openjdk:8-jre
 
-COPY docker-entrypoint.sh /home/docker-entrypoint.sh
+RUN   apt update -y \
+&&    apt install ssh -y \
+&&    apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; \
+&&    echo "root:root" | chpasswd
 
-WORKDIR /home
-
-RUN  apt update -y \
-&&  apt install ssh -y \
-#&& service ssh start \
-&& echo "root:root" | chpasswd
+COPY docker-entrypoint.sh /usr/local/bin/
 
 EXPOSE 8080 22
 ENTRYPOINT ["docker-entrypoint.sh"]
