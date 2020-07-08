@@ -10,3 +10,4 @@ RUN  apt update -y \
 && echo "root:root" | chpasswd
 
 EXPOSE 8080 22
+ENTRYPOINT ["docker-entrypoint.sh"]
