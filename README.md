@@ -2,6 +2,6 @@
 
 docker run -it --rm -d yexianyi/openjdk
 
-Port 8080 and 22 are exposed automatically
+SSH port 22 is exposed automatically
 
-Default user and pwd is "dev/dev1234"
+Default ssh user and pwd is "dev/dev1234"
